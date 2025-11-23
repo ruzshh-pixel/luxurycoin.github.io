@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LUXURY Coin — Where Blockchain Meets Luxury</title>
+  <meta name="description" content="LUXURY Coin — TON token. Premium Web3 landing: tokenomics, roadmap, whitepaper, DEX stats." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <style>
+    /* --- Reset & base --- */
+    :root{
+      --bg:#05060a; /* deep */
+      --panel:linear-gradient(135deg,#0b0d12 0%,#12131a 60%);
+      --accent:#d4af37; /* gold */
+      --neon:#7cf0ff;
+      --glass: rgba(255,255,255,0.04);
+      --muted: #9aa3b2;
+      --radius:16px;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,240,255,0.03), transparent), var(--bg);
+      color:#e6eef8; -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale; line-height:1.4;
+    }
+
+    /* container */
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:20px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:58px;height:58px;border-radius:12px;background:linear-gradient(135deg, rgba(212,175,55,0.12), rgba(124,240,255,0.06));
+      display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--accent);font-size:20px;box-shadow:0 6px 24px rgba(124,240,255,0.03) inset;
+    }
+    .brand h1{margin:0;font-size:18px;letter-spacing:0.6px}
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px}
+    nav a:hover{color:#fff;background:rgba(255,255,255,0.03)}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;margin-top:24px;align-items:center}
+    .card{background:var(--panel);border-radius:var(--radius);padding:28px;box-shadow:0 8px 40px rgba(2,6,23,0.6);}
+    .eyebrow{color:var(--neon);font-weight:600;font-size:13px}
+    .headline{font-size:36px;margin:10px 0 6px}
+    .lead{color:var(--muted);margin-bottom:16px}
+    .btn{display:inline-flex;gap:10px;align-items:center;padding:12px 18px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);cursor:pointer;text-decoration:none}
+    .btn.primary{background:linear-gradient(90deg, rgba(212,175,55,0.18), rgba(124,240,255,0.03));color:var(--accent);font-weight:700}
+    .btn.ghost{background:transparent;color:var(--neon);border:1px solid rgba(124,240,255,0.12)}
+
+    /* stats box */
+    .stats{display:flex;flex-direction:column;gap:12px}
+    .stat{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:12px;display:flex;justify-content:space-between;align-items:center}
+    .small{font-size:13px;color:var(--muted)}
+    .big{font-weight:700;font-size:18px}
+
+    /* sections */
+    section{margin-top:20px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .tokenomics ul{list-style:none;padding:0;margin:0}
+    .tokenomics li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed rgba(255,255,255,0.03)}
+
+    /* footer */
+    footer{margin-top:28px;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.008));display:flex;justify-content:space-between;align-items:center}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr 360px}
+      .headline{font-size:30px}
+    }
+    @media (max-width:720px){
+      .wrap{padding:14px}
+      header{align-items:flex-start;gap:8px}
+      .hero{grid-template-columns:1fr;}
+      nav{display:none}
+      .mobile-nav{display:flex;justify-content:space-between;width:100%}
+      .logo{width:48px;height:48px}
+      .headline{font-size:24px}
+      .grid-3{grid-template-columns:1fr}
+      .card{padding:18px}
+    }
+
+    /* small animations */
+    .glow{position:relative}
+    .glow:before{content:'';position:absolute;inset:-30px;background:radial-gradient(circle at 20% 10%, rgba(124,240,255,0.04), transparent 15%);border-radius:22px;z-index:-1;}
+
+    /* preloader */
+    #pre{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9999}
+    .spinner{width:88px;height:88px;border-radius:50%;background:conic-gradient(var(--neon), transparent 40%);display:flex;align-items:center;justify-content:center}
+    .spinner:after{content:'';width:52px;height:52px;background:rgba(0,0,0,0.25);border-radius:50%}
+
+    /* link style small */
+    .small-link{color:var(--neon);text-decoration:none}
+
+  </style>
+</head>
+<body>
+  <div id="pre"><div class="spinner"></div></div>
+  <div class="wrap" id="top">
+    <header>
+      <div class="brand">
+        <div class="logo">64RUZ</div>
+        <div>
+          <h1>LUXURY Coin</h1>
+          <div class="small">Where Blockchain Meets Luxury</div>
+        </div>
+      </div>
+
+      <nav aria-label="primary">
+        <a href="#whitepaper">Whitepaper</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#dex">DEX</a>
+        <a class="btn ghost" href="https://t.me/" target="_blank">Telegram</a>
+      </nav>
+
+      <div class="mobile-nav" style="display:none">
+        <button id="burger" class="btn ghost">Menu</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="card">
+          <div class="eyebrow">LUXURY · LXR · TON</div>
+          <h2 class="headline">Digital luxury — real-world access</h2>
+          <p class="lead">LUXURY is a premium TON-based token that connects holders with exclusive NFTs, events and partner perks. Designed to feel expensive and secure.</p>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a class="btn primary" href="#dex">View DEX</a>
+            <a class="btn" href="#whitepaper">Read Whitepaper</a>
+            <a class="btn ghost" id="buyBtn" href="https://dexscreener.com/ton/eqcd9xb713d8w2swpieytp636bvqhmadeqt4bfqbieq-maek" target="_blank">Buy on DEX</a>
+          </div>
+
+          <div style="margin-top:18px" class="stats">
+            <div class="stat"><div><div class="small">Price USD</div><div class="big" id="priceUsd">$0.00</div></div><div class="small">FDV <span id="fdv">—</span></div></div>
+            <div class="stat"><div class="small">Liquidity</div><div class="big" id="liquidity">—</div></div>
+            <div class="stat"><div class="small">Market Cap</div><div class="big" id="mcap">—</div></div>
+          </div>
+
+        </div>
+
+        <div class="card glow">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div class="small">Live DEX</div>
+              <h3 style="margin:6px 0 0">LXR · TON</h3>
+              <div class="small" style="margin-top:6px">Pair created recently · Low liquidity</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-weight:800;font-size:22px">0.001412 TON</div>
+              <div class="small">≈ $0.00207</div>
+            </div>
+          </div>
+
+          <div style="margin-top:16px;border-radius:12px;overflow:hidden">
+            <!-- Embed dexscreener as iframe for live chart (if allowed by CORS, otherwise it will fallback to link) -->
+            <iframe id="dexFrame" src="https://dexscreener.com/ton/eqcd9xb713d8w2swpieytp636bvqhmadeqt4bfqbieq-maek?embed=1" style="width:100%;height:260px;border:0;background:transparent"></iframe>
+          </div>
+
+        </div>
+      </div>
+
+      <section id="whitepaper">
+        <div class="card tokenomics">
+          <h3>Whitepaper</h3>
+          <p class="small">LUXURY is not just a meme coin, but a digital symbol of elegance. Our vision is to merge blockchain with luxury lifestyle, creating real-world utilities with NFTs, events, and exclusive access.</p>
+          <p style="margin-top:12px"><a class="small-link" href="#">Read full whitepaper (PDF)</a></p>
+        </div>
+      </section>
+
+      <section id="tokenomics">
+        <div class="card tokenomics">
+          <h3>Tokenomics</h3>
+          <ul>
+            <li><span>Total Supply</span><strong>1,000,000,000 LUXURY</strong></li>
+            <li><span>Community</span><strong>50%</strong></li>
+            <li><span>Marketing</span><strong>20%</strong></li>
+            <li><span>Liquidity</span><strong>20%</strong></li>
+            <li><span>Development</span><strong>10%</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="roadmap">
+        <div class="card">
+          <h3>Roadmap</h3>
+          <div class="grid-3">
+            <div>
+              <h4>Phase 1</h4>
+              <p class="small">Launch | Website | Socials</p>
+            </div>
+            <div>
+              <h4>Phase 2</h4>
+              <p class="small">Influencer Marketing | Listings</p>
+            </div>
+            <div>
+              <h4>Phase 3</h4>
+              <p class="small">NFT Collection | Partnerships | Events</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="dex">
+        <div class="card">
+          <h3>DEX Screener Live</h3>
+          <p class="small">Live trading stats and chart sourced from DEXScreener for convenience. Use the "Buy on DEX" button to open the pair on DEXScreener.</p>
+          <div style="margin-top:12px">
+            <a class="btn" href="https://dexscreener.com/ton/eqcd9xb713d8w2swpieytp636bvqhmadeqt4bfqbieq-maek" target="_blank">Open on DEX Screener</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© 2025 LUXURY Coin — All Rights Reserved</div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="small-link" href="#">Privacy</a>
+        <a class="small-link" href="#">Terms</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Simple preloader + fake fetch for DEX values (we scraped values earlier)
+    document.addEventListener('DOMContentLoaded',()=>{
+      setTimeout(()=>document.getElementById('pre').style.display='none',600);
+
+      // Populate stats with values from DEX Screener snapshot (best-effort)
+      const priceUsd = '$0.002073';
+      const liquidity = '$164';
+      const mcap = '$205K';
+      const fdv = '$205K';
+      document.getElementById('priceUsd').textContent = priceUsd;
+      document.getElementById('liquidity').textContent = liquidity;
+      document.getElementById('mcap').textContent = mcap;
+      document.getElementById('fdv').textContent = fdv;
+
+      // Burger menu for mobile
+      const burger = document.getElementById('burger');
+      if(burger){
+        burger.addEventListener('click',()=>{
+          const nav = document.querySelector('nav');
+          if(nav.style.display==='flex') nav.style.display='none'; else nav.style.display='flex';
+        });
+      }
+
+      // Smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click',e=>{
+          e.preventDefault();
+          const t = document.querySelector(a.getAttribute('href'));
+          if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+        });
+      });
+
+    });
+
+    // If iframe blocked by DEX Screener, replace with a fallback image
+    const iframe = document.getElementById('dexFrame');
+    iframe.addEventListener('error', ()=>{
+      const p = document.createElement('div'); p.className='card'; p.textContent='Chart unavailable — open on DEX Screener';
+      iframe.parentNode.replaceChild(p, iframe);
+    });
+
+  </script>
+</body>
+</html>
